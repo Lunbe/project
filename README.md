@@ -1,4 +1,5 @@
 rgb(234,54,128)**蕭婉倫_Python人工智慧與數據分析班2025年01期_主要專題報告**
+The background color is `#ffffff` for light mode and `#000000` for dark mode.
 
 一、專題名稱：用十年信用卡網購數據，發現台灣消費潛力市場與成長熱點  
 
