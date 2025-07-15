@@ -37,3 +37,43 @@
 1. 觀察哪些地區消費成長快速，適合考慮投入更多廣告資源與當地合作
 2. 觀察節慶(雙 11、母親節、年底購物季)為顯著高峰期，可針對這些時段提早布局檔期活動與預熱投放
 3. 觀察平均單筆消費金額，是否為呈下滑，但交易筆數提升，代表消費者偏好分次小額購物，建議適合導入訂閱制、小單快閃組合策略
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>蕭婉倫_信用卡消費數據分析</title>
+</head>
+<body>
+    <h1>蕭婉倫_Python人工智慧與數據分析班2025年01期_主要專題報告</h1>
+    <h2>一、專題名稱</h2>
+    <p>用十年信用卡網購數據，發現台灣消費潛力市場與成長熱點</p>
+
+    <h2>二、專題說明</h2>
+    <ul>
+        <li><strong>探討的核心問題</strong></li>
+        <ul>
+            <li>台灣國人從 2014 年到現在，在網購金額與筆數上有什麼變化趨勢？</li>
+            <li>有哪些縣市、年齡層或時間點消費變化最劇烈？</li>
+            <li>疫情前後（2020年）網購習慣是否明顯改變？</li>
+            <li>是否能從資料中看出消費升級或平台多元化？</li>
+            <li>哪些縣市或族群是未來值得經營的潛力市場？</li>
+        </ul>
+        <li><strong>專題亮點</strong>：結合政策背景、互動 Power BI 圖表</li>
+        <li><strong>進階分析</strong>：觀察數位落差與節慶效應對消費的影響</li>
+    </ul>
+
+    <h2>三、Power BI 數據儀表板</h2>
+    <iframe title="0708_六都十六縣之年齡層產業別分析"
+        width="800" height="500"
+        src="https://app.powerbi.com/view?r=eyJrIjoiZWI0YmZjNjgtY2MyNC00MjRkLTgwODEtN2NmNTI5ZjY1MWExIiwidCI6Ijg4ZWZjYTcxLTk0NGYtNDg5Yi1hYTA3LTA5ZTVlN2MwZDRjZCJ9"
+        frameborder="0" allowfullscreen="true">
+    </iframe>
+
+    <h2>四、資料來源</h2>
+    <p>政府資料開放平台</p>
+
+    <h2>五、成員與分析目的</h2>
+    <p>蕭婉倫。希望透過數據分析協助電商與企業掌握潛力市場。</p>
+</body>
+</html>
