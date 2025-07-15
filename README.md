@@ -37,6 +37,3 @@
 1. 觀察哪些地區消費成長快速，適合考慮投入更多廣告資源與當地合作
 2. 觀察節慶(雙 11、母親節、年底購物季)為顯著高峰期，可針對這些時段提早布局檔期活動與預熱投放
 3. 觀察平均單筆消費金額，是否為呈下滑，但交易筆數提升，代表消費者偏好分次小額購物，建議適合導入訂閱制、小單快閃組合策略
-
-<iframe title="0708_六都十六縣之年齡層產業別分析" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZWI0YmZjNjgtY2MyNC00MjRkLTgwODEtN2NmNTI5ZjY1MWExIiwidCI6Ijg4ZWZjYTcxLTk0NGYtNDg5Yi1hYTA3LTA5ZTVlN2MwZDRjZCJ9" frameborder="0" allowFullScreen="true"></iframe>
-
