@@ -1,146 +1,121 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <title>蕭婉倫_信用卡消費數據分析</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Python人工智慧與數據分析班2025年01期_專題報告</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: "Noto Sans TC", "Segoe UI", sans-serif;
-            background-color: #f5f8fc;
-            color: #1f3f73;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f9fafb;
+            color: #333;
             line-height: 1.8;
-            margin: 0;
-            padding: 0;
+            padding: 2em;
+            max-width: 960px;
+            margin: auto;
         }
-        header {
-            background-color: #1f3f73;
-            color: white;
-            padding: 30px 20px;
+        h1 {
+            background-color: #1f497d;
+            color: #fff;
+            padding: 0.8em 1em;
+            border-radius: 8px;
             text-align: center;
         }
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background-color: white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            padding-bottom: 40px;
-        }
-        h1, h2 {
-            color: #1f3f73;
-        }
         h2 {
-            margin-top: 40px;
-            border-left: 5px solid #2b67b1;
+            color: #204060;
+            border-left: 5px solid #1f497d;
             padding-left: 10px;
+            margin-top: 2em;
         }
-        ul {
-            padding-left: 20px;
+        h3 {
+            color: #295e8c;
+            margin-top: 1.5em;
+        }
+        ul, p {
+            background-color: #ffffff;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         iframe {
-            display: block;
-            margin: 30px auto;
+            width: 100%;
+            height: 650px;
             border: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 6px;
-        }
-        p {
-            margin: 10px 0;
-        }
-        .section {
-            margin-bottom: 30px;
+            margin: 2em 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
         }
         footer {
             text-align: center;
+            margin-top: 3em;
+            font-size: 0.9em;
             color: #888;
-            font-size: 14px;
-            margin: 50px 0 20px 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Python人工智慧與數據分析班<br>2025年01期 專題報告</h1>
-    </header>
+    <h1>Python人工智慧與數據分析班2025年01期_專題報告</h1>
 
-    <main>
-        <div class="section">
-            <h2>一、專題名稱</h2>
-            <p>用十年信用卡網購數據，看見台灣消費行為的變化與年齡層趨勢</p>
-        </div>
+    <h2>一、專題名稱</h2>
+    <p>用十年信用卡網購數據，看見台灣消費行為的變化與年齡層趨勢</p>
 
-        <div class="section">
-            <h2>二、專題說明</h2>
+    <h2>二、專題說明</h2>
+    <h3>探討的核心問題</h3>
+    <ul>
+        <li>台灣國人從 2014 年至今，網購金額與筆數的整體變化趨勢為何？</li>
+        <li>哪些年份或月份出現明顯的消費高峰或轉折點？是否與政策或社會事件（如疫情）有關？</li>
+        <li>各年齡層的網購消費行為是否隨時間改變？是否有特定族群快速成長？</li>
+        <li>是否出現消費升級（單筆金額上升）或消費頻率增加（筆數成長）的現象？</li>
+        <li>電商節日（如雙11、母親節等）是否明顯影響月度消費變化？</li>
+    </ul>
+
+    <h3>可進行的分析方向</h3>
+    <ul>
+        <li>2014 ~ 2024 年各年度消費總額與筆數變化與成長率分析</li>
+        <li>找出是否有明顯成長跳躍點（例如 2020 疫情期間）</li>
+        <li>各年齡層消費金額與頻率的年增變化，比較不同世代的成長速度與消費行為差異</li>
+        <li>單筆金額變化 ➜ 是否反映消費習慣轉變或平台策略調整？</li>
+        <li>各月份/季節性變化趨勢分析 ➜ 哪些月份平均金額/筆數高？是否與促銷節日有關？</li>
+    </ul>
+
+    <h3>專題亮點</h3>
+    <ul>
+        <li>結合政策與社會事件（如疫情、電商平台發展）進行長期觀察，揭示消費行為的潛在驅動因素</li>
+        <li>使用 Power BI 建立互動式視覺化儀表板，可動態調整年齡層、年份、月份等篩選條件，探索消費趨勢</li>
+        <li>可視化呈現：
             <ul>
-                <li><strong>探討的核心問題</strong></li>
-                <ul>
-                    <li>台灣國人從 2014 年至今，網購金額與筆數的整體變化趨勢為何？</li>
-                    <li>哪些年份或月份出現明顯的消費高峰或轉折點？是否與政策或社會事件（如疫情）有關？</li>
-                    <li>各年齡層的網購消費行為是否隨時間改變？是否有特定族群快速成長？</li>
-                    <li>是否出現消費升級（單筆金額上升）或消費頻率增加（筆數成長）的現象？</li>
-                    <li>電商節日（如雙11、母親節等）是否明顯影響月度消費變化？</li>
-                </ul>
-
-                <li><strong>可進行的分析方向</strong></li>
-                <ul>
-                    <li>2014 ~ 2024 年各年度消費總額與筆數變化與年增率分析</li>
-                    <li>觀察是否有明顯成長跳躍點（例如疫情期間）</li>
-                    <li>比較各年齡層消費金額與筆數年增變化，分析不同世代的行為差異</li>
-                    <li>分析單筆金額變化 ➜ 是否反映消費習慣轉變</li>
-                    <li>觀察月份與季節波動 ➜ 是否與特定促銷節慶有關</li>
-                </ul>
-
-                <li><strong>專題亮點</strong></li>
-                <ul>
-                    <li>結合政策與社會事件（如疫情、電商發展）進行時間序列觀察</li>
-                    <li>使用 Power BI 建立互動式視覺化儀表板 ➜ 可篩選年份、月份、年齡層</li>
-                    <li>可視化呈現：
-                        <ul>
-                            <li>每年 / 每月消費總額變化折線圖</li>
-                            <li>年齡層消費行為變化趨勢圖</li>
-                            <li>單筆金額與筆數的年對年比較</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <li><strong>進階分析</strong></li>
-                <ul>
-                    <li>搭配電商節慶月份清單 ➜ 分析促銷活動對消費刺激的影響</li>
-                    <li>整合公開資料（如人口結構、網路 / 手機普及率） ➜ 補強地區差異與數位落差觀察</li>
-                </ul>
+                <li>每年／每月消費總額變化折線圖</li>
+                <li>年齡層消費行為變化趨勢圖</li>
+                <li>單筆金額與交易筆數的年度對比</li>
             </ul>
-        </div>
+        </li>
+    </ul>
 
-        <div class="section">
-            <h2>三、Power BI 數據儀表板</h2>
-            <iframe title="0708_六都十六縣之年齡層產業別分析"
-                width="100%" height="500"
-                src="https://app.powerbi.com/view?r=eyJrIjoiZWI0YmZjNjgtY2MyNC00MjRkLTgwODEtN2NmNTI5ZjY1MWExIiwidCI6Ijg4ZWZjYTcxLTk0NGYtNDg5Yi1hYTA3LTA5ZTVlN2MwZDRjZCJ9"
-                allowfullscreen="true">
-            </iframe>
-        </div>
+    <h3>進階分析</h3>
+    <ul>
+        <li>搭配「電商節日與月份清單」 ➜ 分析大型促銷活動對消費刺激的影響</li>
+        <li>結合公開數據（如人口結構、網路/手機普及率）進行交叉觀察 ➜ 探討數位落差對消費行為的影響</li>
+    </ul>
 
-        <div class="section">
-            <h2>四、資料來源</h2>
-            <p>政府資料開放平台（<a href="https://data.gov.tw" target="_blank">https://data.gov.tw</a>）</p>
-        </div>
+    <h2>三、資料來源／取得方式</h2>
+    <p>政府資料開放平台</p>
 
-        <div class="section">
-            <h2>五、成員與分析目的</h2>
-            <p><strong>成員</strong>：蕭婉倫</p>
-            <p><strong>分析目的與預計提供見解：</strong></p>
-            <ul>
-                <li><strong>時間節點布局建議</strong>：掌握每年消費高峰月（如雙11、母親節、年底購物季），作為廣告與活動部署依據</li>
-                <li><strong>族群分眾經營建議</strong>：找出成長快速的年齡族群，協助制定分眾行銷策略</li>
-                <li><strong>消費模式趨勢建議</strong>：若發現單筆金額下滑、但筆數上升 ➜ 建議導入訂閱制、快閃組合、小額促銷策略</li>
-            </ul>
-            <p>補充說明：若後續能整合地區 / 人口 / 數位使用相關資料，仍可進一步補強地區差異分析與數位落差導因，作為更全面的佈局參考。</p>
-        </div>
-    </main>
+    <h2>四、成員與成員負責項目</h2>
+    <p>蕭婉倫</p>
 
-    <footer>
-        &copy; 2025 蕭婉倫 專題成果網頁｜Powered by GitHub Pages
-    </footer>
+    <h2>五、分析目的與預計提供見解</h2>
+    <p>透過十年信用卡網購數據，深入觀察台灣消費者的時間趨勢與族群變化，協助電商與品牌掌握策略重點。預期能提供以下行銷建議方向：</p>
+    <ul>
+        <li><strong>時間節點布局建議：</strong> 分析全年各月份消費金額與筆數變化，觀察特定節慶高峰期，作為品牌提前部署行銷活動的重要依據。</li>
+        <li><strong>族群分眾經營建議：</strong> 比較各年齡層的年增率與消費行為變化，找出成長快速族群，精準分眾行銷。</li>
+        <li><strong>消費模式趨勢建議：</strong> 若單筆金額下降但交易筆數提升，建議企業採訂閱制、快閃促銷、小額多頻模式。</li>
+    </ul>
+    <p>補充說明：後續可整合地區/人口/數位使用資料，進一步強化地區差異分析與數位落差探討。</p>
+
+    <h2>Power BI 互動儀表板展示</h2>
+    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZWI0YmZjNjgtY2MyNC00MjRkLTgwODEtN2NmNTI5ZjY1MWExIiwidCI6Ijg4ZWZjYTcxLTk0NGYtNDg5Yi1hYTA3LTA5ZTVlN2MwZDRjZCJ9" allowfullscreen="true"></iframe>
+
+    <footer>© 2025 蕭婉倫 | 本網站使用 GitHub Pages 架設</footer>
 </body>
 </html>
