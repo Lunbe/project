@@ -27,7 +27,6 @@
     .card { background: #fff; padding: 1.5em; margin-bottom: 2em; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
     .card p, .card ul { line-height: 1.7; margin-bottom: 1em; }
     .card ul li { margin-bottom: 0.5em; }
-    iframe { width: 100%; height: 650px; border: none; margin: 2em 0; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
     footer { text-align: center; padding: 1em 0; color: #888; font-size: 0.9em; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
@@ -41,7 +40,7 @@
     </div>
   </header>
   <main>
-    <!-- ABOUT ME 分頁 -->
+    <!-- ABOUT ME -->
     <section id="about" class="active">
       <div class="card">
         <h2>一、家庭概況</h2>
@@ -81,11 +80,12 @@
       </div>
     </section>
 
-    <!-- 作品集 分頁 -->
+    <!-- 作品集（原始模式） -->
     <section id="portfolio">
-      <div class="card">
-        <h2>用十年信用卡網購數據，看見台灣消費行為的變化與年齡層趨勢　蕭婉倫</h2>
-        <h3>一、專題說明</h3>
+      <div style="background-color:#f9fafb; padding:2em;">
+        <h1>用十年信用卡網購數據，看見台灣消費行為的變化與年齡層趨勢　蕭婉倫</h1>
+
+        <h2>一、專題說明</h2>
         <p><strong>本專題使用兩種信用卡資料來源進行分析：（資料來源：政府資料開放平台）</strong></p>
         <ul>
           <li><strong>網購資料：</strong>提供產業別與月度消費趨勢，呈現整體網購市場的演變趨勢與節日促銷的影響。</li>
@@ -95,17 +95,23 @@
 
         <h3>研究問題與分析策略</h3>
         <ul>
-          <li>台灣國人從 2014 年至今，網購金額與筆數的整體變化趨勢為何？ ➜ 分析 2014 至 2024 年每年之總消費金額與交易筆數的變化，並計算年增率，以找出成長趨勢。</li>
-          <li>是否出現明顯的消費高峰或轉折點？是否與政策或社會事件（如疫情）有關？ ➜ 尋找特定年份或月度的數據跳躍點，搭配重大事件（如 COVID-19、政策刺激）進行對照分析。</li>
-          <li>是否出現消費升級或頻率增加的現象？ ➜ 觀察單筆交易金額是否隨時間上升，以及整體交易筆數是否穩定成長，以反映消費行為與平台策略變化。</li>
-          <li>不同年齡層的消費行為是否隨時間改變？是否有特定族群快速成長？ ➜ 分析各年齡層之年消費金額與筆數的變化趨勢，計算年增率，評估各世代消費力與成長速度。</li>
-          <li>電商節日（如雙11、母親節）是否對月度消費造成明顯影響？ ➜ 分析月度與季節性趨勢，找出高峰月份，並對應電商活動日期以觀察促銷影響力。</li>
+          <li>台灣國人從 2014 年至今，網購金額與筆數的整體變化趨勢為何？<br>➜ 分析 2014 至 2024 年每年之總消費金額與交易筆數的變化，並計算年增率，以找出成長趨勢。</li>
+          <li>是否出現明顯的消費高峰或轉折點？是否與政策或社會事件（如疫情）有關？<br>➜ 尋找特定年份或月份的數據跳躍點，搭配重大事件（如 COVID-19 疫情、政策刺激）進行對照分析。</li>
+          <li>是否出現消費升級或頻率增加的現象？<br>➜ 觀察單筆交易金額是否隨時間上升，及整體交易筆數是否穩定成長，以反映消費行為與平台策略變化。</li>
+          <li>不同年齡層的消費行為是否隨時間改變？是否有特定族群快速成長？<br>➜ 分析各年齡層年消費金額與筆數的變化趨勢，計算年增率，評估各世代的消費力與成長速度。</li>
+          <li>電商節日（如雙11、母親節）是否對月度消費造成明顯影響？<br>➜ 分析月度與季節性趨勢，找出高峰月份，並對應電商活動日期以觀察促銷影響力。</li>
         </ul>
 
         <h3>主要工具</h3>
         <ul>
           <li>使用 Power BI 建立互動式視覺化儀表板，可動態調整年齡層、年份、月份等篩選條件，探索消費趨勢。</li>
-          <li>可視化呈現：每年／每月消費總額變化折線圖、年齡層消費行為變化趨勢圖（整體交易資料）、單筆金額與交易筆數的年度對比。</li>
+          <li>可視化呈現：<br>
+            <ul>
+              <li>每年／每月消費總額變化折線圖</li>
+              <li>年齡層消費行為變化趨勢圖（整體交易資料）</li>
+              <li>單筆金額與交易筆數的年度對比</li>
+            </ul>
+          </li>
         </ul>
 
         <h3>進階分析</h3>
@@ -114,7 +120,7 @@
           <li>結合公開數據（如人口結構、網路/手機普及率）進行交叉觀察 ➜ 探討數位落差對消費行為的影響</li>
         </ul>
 
-        <h3>二、分析目的與預計提供見解</h3>
+        <h2>二、分析目的與預計提供見解</h2>
         <p>透過十年信用卡數據，深入觀察台灣消費者的時間趨勢與族群變化，協助電商與品牌掌握策略重點。預期能提供以下行銷建議方向：</p>
         <ul>
           <li><strong>時間節點布局建議：</strong>分析全年各月份消費變化，作為品牌提前部署行銷活動的重要依據。</li>
@@ -122,12 +128,12 @@
           <li><strong>消費模式趨勢建議：</strong>若單筆金額下降但交易筆數提升，建議企業採訂閱制、快閃促銷、小額多頻模式。</li>
         </ul>
 
-        <h3>Power BI 互動儀表板展示</h3>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMTBlZDUzNmYtMzkxMy00Y2UwLWFkNmMtY2I3N2M1ZGUwODI5IiwidCI6Ijg4ZWZjYTcxLTk0NGYtNDg5Yi1hYTA3LTA5ZTVlN2MwZDRjZCJ9" title="Power BI 網購分析" allowfullscreen></iframe>
+        <h2>Power BI 互動儀表板展示</h2>
+        <iframe title="2014-2025信用卡分析資料" src="https://app.powerbi.com/view?r=eyJrIjoiMTBlZDUzNmYtMzkxMy00Y2UwLWFkNmMtY2I3N2M1ZGUwODI5IiwidCI6Ijg4ZWZjYTcxLTk0NGYtNDg5Yi1hYTA3LTA5ZTVlN2MwZDRjZCJ9" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
 
-    <!-- 讀書心得＆課程筆記 分頁 -->
+    <!-- 讀書心得＆課程筆記 -->
     <section id="notes">
       <div class="card">
         <h2>讀書心得＆課程筆記</h2>
