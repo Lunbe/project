@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <style>
+@media print {
+  /* 隱藏所有內容 */
+  body * { visibility: hidden !important; }
+  /* 只讓作品集可見 */
+  #portfolio, #portfolio * { visibility: visible !important; }
+  /* 將作品集定位到頁面頂端 */
+  #portfolio { position: absolute; top: 0; left: 0; width: 100%; }
+}
+</style>
+  <button onclick="window.print()" style="position:fixed; top:1em; right:1em; z-index:999;">
+  下載作品集 PDF
+</button>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蕭婉倫 | 個人網站</title>
