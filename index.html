@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <style>
-@media print {
-  /* 隱藏所有內容 */
-  body * { visibility: hidden !important; }
-  /* 只讓作品集可見 */
-  #portfolio, #portfolio * { visibility: visible !important; }
-  /* 將作品集定位到頁面頂端 */
-  #portfolio { position: absolute; top: 0; left: 0; width: 100%; }
-}
-</style>
-  <button onclick="window.print()" style="position:fixed; top:1em; right:1em; z-index:999;">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<button id="download-portfolio" style="position:fixed; top:1em; right:1em; z-index:999;">
   下載作品集 PDF
 </button>
+
+<script>
+document.getElementById('download-portfolio').addEventListener('click', () => {
+  const el = document.getElementById('portfolio');
+  html2pdf()
+    .set({
+      margin:       10,
+      filename:     '作品集.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    })
+    .from(el)
+    .save();
+});
+</script>
+
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
