@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -7,122 +6,34 @@
   <title>蕭婉倫 | 個人網站</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
   <style>
-    /* Portfolio section background */
-    #portfolio {
-      background-color: #e7f3ff;
-      padding: 1em;
-      border-radius: 8px;
-      margin-bottom: 2em;
-    }
-    /* Center embed charts */
-    #portfolio .card iframe {
-      display: block;
-      margin: 1em auto;
-    }
-    /* Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Noto Sans TC', sans-serif;
-      background: #fafafa;
-      color: #333;
-    }
-    header {
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .tabs {
-      display: flex;
-      justify-content: center;
-    }
-    .tabs button {
-      flex: 1;
-      padding: 1em;
-      border: none;
-      background: none;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .tabs button:hover {
-      background: #f2f2f2;
-    }
-    .tabs button.active {
-      border-bottom: 3px solid #1f497d;
-      color: #1f497d;
-      font-weight: bold;
-    }
-    main {
-      max-width: 1200px;
-      margin: 2em auto;
-      padding: 0 1em;
-    }
-    section {
-      display: none;
-      animation: fadeIn 0.5s ease;
-    }
-    section.active {
-      display: block;
-    }
-    h2 {
-      color: #1f497d;
-      margin-bottom: 0.5em;
-      font-size: 1.6em;
-      border-left: 4px solid #204060;
-      padding-left: 0.5em;
-    }
-    h3 {
-      color:rgb(32, 132, 141);
-      font-size: 1.2em;
-      margin: 1em 0 0.75em;
-    }
-    .card {
-      background: #fff;
-      padding: 1.5em;
-      margin-bottom: 1.5em;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .card p {
-      line-height: 1.8;
-      margin-bottom: 1em;
-    }
-    .card ul {
-      list-style: disc;
-      margin-left: 2em;
-      margin-bottom: 1.5em;
-      line-height: 1.8;
-    }
-    .card ul ul {
-      margin-left: 1.5em;
-    }
-    .card ul li {
-      margin-bottom: 1em;
-    }
-    iframe {
-      width: 100%;
-      height: 650px;
-      border: none;
-      margin: 1em 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    footer {
-      text-align: center;
-      padding: 1em 0;
-      color: #888;
-      font-size: 0.9em;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    /* Layout & Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans TC', sans-serif; background: #fafafa; color: #333; }
+    main { max-width: 1200px; margin: 2em auto; padding: 0 1em; }
+    .card { background: #fff; padding: 1.5em; margin-bottom: 1.5em; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    .card h1, .card h2, .card h3, .card h4 { margin-bottom: 1em; }
+    .card p { line-height: 1.8; margin-bottom: 1em; }
+    .card ul { list-style: disc; margin-left: 2em; margin-bottom: 1.5em; line-height: 1.8; }
+    .card ul ul { margin-left: 1.5em; }
+    .card ul li { margin-bottom: 1em; }
+    iframe { width: 100%; height: 650px; border: none; margin: 1em 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    footer { text-align: center; padding: 1em 0; color: #888; font-size: 0.9em; }
+
+    /* Tabs */
+    header { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .tabs { display: flex; justify-content: center; }
+    .tabs button { flex: 1; padding: 1em; border: none; background: none; font-size: 1em; cursor: pointer; transition: background 0.3s; }
+    .tabs button:hover { background: #f2f2f2; }
+    .tabs button.active { border-bottom: 3px solid #1f497d; color: #1f497d; font-weight: bold; }
+
+    /* Sections */
+    section { display: none; animation: fadeIn 0.5s ease; }
+    section.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Headings */
+    h2 { color: #1f497d; font-size: 1.6em; border-left: 4px solid #204060; padding-left: 0.5em; margin-bottom: 0.5em; }
+    h3 { color: #295e8c; font-size: 1.2em; margin: 1em 0 0.75em; }
   </style>
 </head>
 <body>
@@ -133,12 +44,13 @@
       <button class="tab-btn" data-target="notes">讀書心得＆課程筆記</button>
     </div>
   </header>
+
   <main>
     <!-- ABOUT ME -->
     <section id="about" class="active">
+      <div class="card">
         <h2>一、基本資料</h2>
         <ul>
-          <li>中文姓名：蕭婉倫</li>
           <li>英文姓名：Lunbe Hsiao</li>
           <li>個人資料：女、33歲</li>
           <li>聯絡電話：0982-129029</li>
@@ -146,12 +58,14 @@
           <li>駕駛執照：普通重型機車駕照、普通小型車駕照</li>
         </ul>
       </div>
+      <div class="card">
         <h2>二、家庭概況</h2>
         <ul>
           <li>我來自彰化社頭，家父是農夫，家母兼職家庭代工。父母給予我開放式的教養空間，但始終提醒我要對得起自己、尊重他人，這份價值觀至今深深影響我，成為人格發展的重要基礎。</li>
           <li>目前定居台中潭子，已婚育有兩名女兒。工作方面，我重視效率與責任感，期望平日能於17:00～17:30下班，如遇專案緊急狀況也能彈性配合。家庭與職涯同等重要，良好平衡能讓人在工作中發揮更大動能與穩定力。</li>
         </ul>
       </div>
+      <div class="card">
         <h2>三、經歷概況</h2>
         <p>畢業於北斗家商國貿科與高雄海洋科技大學航運管理系。學生時期因家庭經濟因素，打過多份工，培養出高度責任感與執行力。</p>
         <h3>▍2014–2016 | 高歐國際股份有限公司 | 文件／總務人員</h3>
@@ -164,6 +78,7 @@
         <h3>▍2024 | 薇佳 | 遠端行銷助理</h3>
         <p>負責遠端支援各項行銷任務，並主動提出文件與資料夾結構優化提案，提升團隊效率，體會多元溝通方式與資訊架構價值。</p>
       </div>
+      <div class="card">
         <h2>四、技能概況</h2>
         <ul>
           <li>資料處理工具學習中：Python（Pandas、Openpyxl）、SQL、Power BI、Excel VBA、自動化報表邏輯建構。</li>
@@ -171,6 +86,7 @@
           <li>跨部門溝通與流程優化能力：具備行銷、業務與主管間溝通橋樑的實務經驗，善於文件、資料架構整理與優化。</li>
         </ul>
       </div>
+      <div class="card">
         <h2>五、未來規劃</h2>
         <ul>
           <li>短期目標：進入資料處理、數據分析或資料工程相關領域，累積實務經驗並應用於商業決策與報表製作。</li>
@@ -182,12 +98,15 @@
 
     <!-- 作品集 -->
     <section id="portfolio">
-        </ul>
-        <h1 style="background:#1f497d; color:#fff; padding:0.8em 1em; border-radius:8px; text-align:center;">用十年信用卡網購數據，看見台灣消費行為的變化與年齡層趨勢</h1>
-        </ul>
-        </ul>
-        <h2>一、專題說明</h2>
-        <h3>資料來源</h3>
+      <div class="card">
+        <h2>三、作品集</h2>
+      </div>
+      <div class="card">
+        <h1 style="background:#1f497d; color:#fff; padding:0.8em 1em; border-radius:8px; text-align:center;">
+          用十年信用卡網購數據，看見台灣消費行為的變化與年齡層趨勢　蕭婉倫
+        </h1>
+        <h3>一、專題說明</h3>
+        <h4>資料來源</h4>
         <p>本專題使用兩種信用卡資料來源進行分析：（資料來源：政府資料開放平台）</p>
         <ul>
           <li>網購資料：提供產業別與月度消費趨勢，呈現整體網購市場的演變趨勢與節日促銷的影響。</li>
@@ -195,25 +114,27 @@
         </ul>
         <p>透過兩組資料的交互分析，可深入理解整體消費市場的趨勢變動與消費者族群特徵差異，對於電商與品牌經營提供更具體且實務的建議。</p>
       </div>
+      <div class="card">
         <h3>研究問題與分析策略</h3>
         <ul>
           <li>台灣國人從 2014 年至今，網購金額與筆數的整體變化趨勢為何？
-            <ul>➜ 分析 2014 至 2024 年每年之總消費金額與交易筆數的變化，並計算年增率，以找出成長趨勢。</li></ul>
+            <ul><li>分析 2014 至 2024 年每年之總消費金額與交易筆數的變化，並計算年增率，以找出成長趨勢。</li></ul>
           </li>
           <li>是否出現明顯的消費高峰或轉折點？是否與政策或社會事件（如疫情）有關？
-            <ul>➜ 尋找特定年份或月份的數據跳躍點，搭配重大事件（如 COVID-19 疫情、政策刺激）進行對照分析。</li></ul>
+            <ul><li>尋找特定年份或月份的數據跳躍點，搭配重大事件（如 COVID-19 疫情、政策刺激）進行對照分析。</li></ul>
           </li>
           <li>是否出現消費升級或頻率增加的現象？
-            <ul>➜ 觀察單筆交易金額是否隨時間上升，及整體交易筆數是否穩定成長，以反映消費行為與平台策略變化。</li></ul>
+            <ul><li>觀察單筆交易金額是否隨時間上升，以及交易筆數是否穩定成長，以反映消費行為與平台策略變化。</li></ul>
           </li>
           <li>不同年齡層的消費行為是否隨時間改變？是否有特定族群快速成長？
-            <ul>➜ 分析各年齡層年消費金額與筆數的變化趨勢，計算年增率，評估各世代的消費力與成長速度。</li></ul>
+            <ul><li>分析各年齡層年消費金額與筆數的變化趨勢，計算年增率，評估各世代的消費力與成長速度。</li></ul>
           </li>
           <li>電商節日（如雙11、母親節）是否對月度消費造成明顯影響？
-            <ul>➜ 分析月度與季節性趨勢，找出高峰月份，並對應電商活動日期以觀察促銷影響力。</li></ul>
+            <ul><li>分析月度與季節性趨勢，找出高峰月份，並對應電商活動日期以觀察促銷影響力。</li></ul>
           </li>
         </ul>
       </div>
+      <div class="card">
         <h3>主要工具</h3>
         <ul>
           <li>使用 Power BI 建立互動式視覺化儀表板，可動態調整年齡層、年份、月份等篩選條件，探索消費趨勢。</li>
@@ -229,12 +150,12 @@
       <div class="card">
         <h3>進階分析</h3>
         <ul>
-          <li>搭配「電商節日與月份清單」 ➜ 分析大型促銷活動對消費刺激的影響</li>
-          <li>結合公開數據（如人口結構、網路/手機普及率）進行交叉觀察 ➜ 探討數位落差對消費行為的影響</li>
+          <li>搭配「電商節日與月份清單」：分析大型促銷活動對消費刺激的影響。</li>
+          <li>結合公開數據（如人口結構、網路/手機普及率）進行交叉觀察：探討數位落差對消費行為的影響。</li>
         </ul>
       </div>
       <div class="card">
-        <h2>二、分析目的與預計提供見解</h2>
+        <h2>四、分析目的與預計提供見解</h2>
         <ul>
           <li><strong>時間節點布局建議：</strong>分析全年各月份消費變化，作為品牌提前部署行銷活動的重要依據。</li>
           <li><strong>族群分眾經營建議：</strong>比較年齡層的年增率與行為變化，精準分眾行銷。</li>
@@ -242,17 +163,16 @@
         </ul>
       </div>
       <div class="card">
-        <h2>Power BI 互動儀表板展示</h2>
+        <h2>五、Power BI 互動儀表板展示</h2>
         <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMTBlZDUzNmYtMzkxMy00Y2UwLWFkNmMtY2I3N2M1ZGUwODI5IiwidCI6Ijg4ZWZjYTcxLTk0NGYtNDg5Yi1hYTA3LTA5ZTVlN2MwZDRjZCJ9" title="Power BI 網購分析"></iframe>
       </div>
     </section>
-
 
     <!-- 讀書心得＆課程筆記 -->
     <section id="notes">
       <div class="card">
         <h2>四、讀書心得＆課程筆記</h2>
-        <p>此處暫留空，後續補充Python課程的筆記與心得。</p>
+        <p>此處暫留空，後續可補充 Python 與整理師課程的筆記與心得。</p>
       </div>
     </section>
   </main>
