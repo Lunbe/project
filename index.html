@@ -7,30 +7,121 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
   <style>
     /* Portfolio section background */
-    #portfolio { background-color: #e7f3ff; padding: 1em; border-radius: 8px; margin-bottom: 2em; }
+    #portfolio {
+      background-color: #e7f3ff;
+      padding: 1em;
+      border-radius: 8px;
+      margin-bottom: 2em;
+    }
     /* Center embed charts */
-    #portfolio .card iframe { display: block; margin: 1em auto; }
+    #portfolio .card iframe {
+      display: block;
+      margin: 1em auto;
+    }
     /* Reset */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Noto Sans TC', sans-serif; background: #fafafa; color: #333; }
-    header { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-    .tabs { display: flex; justify-content: center; }
-    .tabs button { flex: 1; padding: 1em; border: none; background: none; font-size: 1em; cursor: pointer; transition: background 0.3s; }
-    .tabs button:hover { background: #f2f2f2; }
-    .tabs button.active { border-bottom: 3px solid #1f497d; color: #1f497d; font-weight: bold; }
-    main { max-width: 960px; margin: 2em auto; padding: 0 1em; }
-    section { display: none; animation: fadeIn 0.5s ease; }
-    section.active { display: block; }
-    h2 { color: #1f497d; margin-bottom: 0.5em; font-size: 1.6em; border-left: 4px solid #204060; padding-left: 0.5em; }
-    h3 { color: #295e8c; font-size: 1.2em; margin: 1em 0 0.75em; }
-    .card { background: #fff; padding: 1.5em 1.5em 0; margin-bottom: 1.5em; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-    .card p { line-height: 1.8; margin-bottom: 1em; }
-    .card ul { list-style: disc; margin-left: 2em; margin-bottom: 1.5em; line-height: 1.8; }
-    .card ul ul { margin-left: 1.5em; }
-    .card ul li { margin-bottom: 1em; }
-    iframe { width: 100%; height: 650px; border: none; margin: 1em 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-    footer { text-align: center; padding: 1em 0; color: #888; font-size: 0.9em; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+    }
+    .tabs button {
+      flex: 1;
+      padding: 1em;
+      border: none;
+      background: none;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tabs button:hover {
+      background: #f2f2f2;
+    }
+    .tabs button.active {
+      border-bottom: 3px solid #1f497d;
+      color: #1f497d;
+      font-weight: bold;
+    }
+    main {
+      max-width: 1200px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      color: #1f497d;
+      margin-bottom: 0.5em;
+      font-size: 1.6em;
+      border-left: 4px solid #204060;
+      padding-left: 0.5em;
+    }
+    h3 {
+      color: #295e8c;
+      font-size: 1.2em;
+      margin: 1em 0 0.75em;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5em;
+      margin-bottom: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .card p {
+      line-height: 1.8;
+      margin-bottom: 1em;
+    }
+    .card ul {
+      list-style: disc;
+      margin-left: 2em;
+      margin-bottom: 1.5em;
+      line-height: 1.8;
+    }
+    .card ul ul {
+      margin-left: 1.5em;
+    }
+    .card ul li {
+      margin-bottom: 1em;
+    }
+    iframe {
+      width: 100%;
+      height: 650px;
+      border: none;
+      margin: 1em 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      color: #888;
+      font-size: 0.9em;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -67,7 +158,7 @@
         <h3>▍2014–2016 | 高歐國際股份有限公司 | 文件／總務人員</h3>
         <p>負責客戶資料核對、船務文件處理、報表製作與帳務統計，磨練出細心與流程整理能力，奠定日後進入數位行銷與資料工作的基礎。</p>
         <h3>▍2016–2020 | 想上數位 | AM 廣告專員</h3>
-        <p>負責Google/Yahoo/FB廣告策略規劃、投放、成效追蹤與數據分析，並協助客戶解讀資料、優化操作。此職位強化我對數據敏感度與邏輯表達能力，並常擔任團隊與客戶間的溝通橋樑。</p>
+        <p>負責 Google/Yahoo/FB 廣告策略規劃、投放、成效追蹤與數據分析，並協助客戶解讀資料、優化操作。此職位強化我對數據敏感度與邏輯表達能力，並常擔任團隊與客戶間的溝通橋樑。</p>
         <p>同年挑戰人生第一場東京全馬馬拉松，6小時完賽，體會到「許多困難其實是想像出來的」，相信設定目標並堅持，就能看見轉機，此精神貫穿後續職涯與學習。</p>
         <h3>▍2021–2024 | 鴻鼎菓子 | 行銷企劃主管</h3>
         <p>帶領團隊推動行銷專案，定期向部門及主管彙報數據成果與策略成效，深化跨部門協調、流程掌握與人際關係經營能力。</p>
@@ -95,9 +186,10 @@
     <!-- 作品集 -->
     <section id="portfolio">
       <div class="card">
+        <h2>三、作品集</h2>
         <h1 style="background:#1f497d; color:#fff; padding:0.8em 1em; border-radius:8px; text-align:center;">用十年信用卡網購數據，看見台灣消費行為的變化與年齡層趨勢　蕭婉倫</h1>
-        <h2>一、專題說明</h2>
-        <h3>資料來源</h3>
+        <h3>一、專題說明</h3>
+        <h4>資料來源</h4>
         <p>本專題使用兩種信用卡資料來源進行分析：（資料來源：政府資料開放平台）</p>
         <ul>
           <li>網購資料：提供產業別與月度消費趨勢，呈現整體網購市場的演變趨勢與節日促銷的影響。</li>
