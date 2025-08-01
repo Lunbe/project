@@ -6,19 +6,25 @@
   下載作品集 PDF
 </button>
 
+  
+
 <script>
 document.getElementById('download-portfolio').addEventListener('click', () => {
   const el = document.getElementById('portfolio');
-  html2pdf()
-    .set({
-      margin:       10,
-      filename:     '作品集.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2 },
-      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    })
-    .from(el)
-    .save();
+html2pdf()
+  .set({
+    margin:       10,
+    filename:     '作品集.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: {
+      mode: ['avoid-all', 'css'],        // 同時啟用避免所有內部分頁 + 讀 CSS 規則
+      avoid: ['.card', 'h2', 'h3']       // 這些元素內部不要拆頁
+    }
+  })
+  .from(document.getElementById('portfolio'))
+  .save();
 });
 </script>
 
