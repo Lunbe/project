@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+<!-- 1. 在 </body> 前，先载入 html2pdf.js CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-<button id="download-portfolio" style="position:fixed; top:1em; right:1em; z-index:999;">
-  下載作品集 PDF
-</button>
 
-  
+<!-- 2. 下载按钮 -->
+<button
+  id="download-portfolio"
+  style="
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 999;
+    background: #1f497d;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+  "
+>下載作品集 PDF</button>
 
+<!-- 3. Print-only CSS（确保只出作品集，并避免标题孤儿） -->
+<style>
+@media print {
+  body * { visibility: hidden !important; }
+  #portfolio, #portfolio * { visibility: visible !important; }
+  #portfolio { position: absolute; top: 0; left: 0; width: 100%; }
+  /* 防止 .card 或 h2/h3 被拆页 */
+  #portfolio .card, #portfolio h2, #portfolio h3 {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+  }
+}
+</style>
+
+<!-- 4. 脚本：点击时调用 html2pdf -->
 <script>
 document.getElementById('download-portfolio').addEventListener('click', () => {
   const el = document.getElementById('portfolio');
-html2pdf()
-  .set({
-    margin:       10,
+  html2pdf(el, {
+    margin:       [10,10,10,10],      // 四边距：10mm
     filename:     '作品集.pdf',
     image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 2 },
+    html2canvas:  { scale: 2, useCORS: true, logging: false },
     jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
     pagebreak: {
-      mode: ['avoid-all', 'css'],        // 同時啟用避免所有內部分頁 + 讀 CSS 規則
-      avoid: ['.card', 'h2', 'h3']       // 這些元素內部不要拆頁
+      mode: ['css'],                  // 仅依 CSS 规则避免拆页
+      avoid: ['.card', 'h2', 'h3']    // 这些元素内部不拆页
     }
-  })
-  .from(document.getElementById('portfolio'))
-  .save();
+  });
 });
 </script>
 
