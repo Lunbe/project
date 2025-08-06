@@ -1,45 +1,104 @@
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9G60NDD2T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}  
-    gtag('js', new Date());
-    gtag('config', 'G-Y9G60NDD2T');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9G60NDD2T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-   <!-- html2pdf CDN -->
+  gtag('config', 'G-Y9G60NDD2T');
+</script>
+  <!-- 1. 在 </body> 前，先載入 html2pdf.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
+  <!-- 2. 下載按鈕 -->
+  <button
+    id="download-portfolio"
+    style="
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      z-index: 999;
+      background: #1f497d;
+      color: #fff;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      cursor: pointer;
+    "
+  >下載整個連結內的內容</button>
+
+  <!-- 3. Print-only CSS -->
+  <style>
+    @media print {
+      body * { visibility: hidden !important; }
+      #portfolio, #portfolio * { visibility: visible !important; }
+      #portfolio { position: absolute; top: 0; left: 0; width: 100%; }
+      #portfolio .card, #portfolio h2, #portfolio h3 {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        -moz-column-break-inside: avoid;
+      }
+    }
+  </style>
+
+  <!-- 4. 脚本：點擊時調用 html2pdf -->
+  <script>
+    document.getElementById('download-portfolio').addEventListener('click', () => {
+      const el = document.getElementById('portfolio');
+      html2pdf(el, {
+        margin:       [10,10,10,10],
+        filename:     '作品集.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true, logging: false },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: {
+          mode: ['css'],
+          avoid: ['.card', 'h2', 'h3']
+        }
+      });
+    });
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蕭婉倫 | 個人網站</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
   <style>
+    /* Layout & Reset */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Noto Sans TC', sans-serif; background: #fafafa; color: #333; }
     main { max-width: 1200px; margin: 2em auto; padding: 0 1em; }
     .card { background: #fff; padding: 1.5em; margin-bottom: 1.5em; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    .card h1, .card h2, .card h3, .card h4 { margin-bottom: 1em; }
+    .card p { line-height: 1.8; margin-bottom: 1em; }
+    .card ul { list-style: disc; margin-left: 2em; margin-bottom: 1.5em; line-height: 1.8; }
+    .card ul ul { margin-left: 1.5em; }
+    .card ul li { margin-bottom: 1em; }
+    iframe { width: 100%; height: 650px; border: none; margin: 1em 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    footer { text-align: center; padding: 1em 0; color: #888; font-size: 0.9em; }
+
+    /* Tabs */
     header { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
     .tabs { display: flex; justify-content: center; }
-    .tabs button { flex: 1; padding: 1em; border: none; background: none; font-size: 1em; cursor: pointer; }
+    .tabs button { flex: 1; padding: 1em; border: none; background: none; font-size: 1em; cursor: pointer; transition: background 0.3s; }
+    .tabs button:hover { background: #f2f2f2; }
     .tabs button.active { border-bottom: 3px solid #1f497d; color: #1f497d; font-weight: bold; }
-    section { display: none; }
+
+    /* Sections */
+    section { display: none; animation: fadeIn 0.5s ease; }
     section.active { display: block; }
-    button#download-portfolio { position: fixed; top: 1em; right: 1em; z-index:999; background:#1f497d; color:#fff; border:none; padding:0.5em 1em; border-radius:4px; cursor:pointer; }
-    iframe { width:100%; height:650px; border:none; margin:1em 0; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
-    footer { text-align:center; padding:1em 0; color:#888; font-size:0.9em; }
-    @media print {
-      body * { visibility: hidden !important; }
-      #portfolio, #portfolio * { visibility: visible !important; }
-      #portfolio { position: absolute; top:0; left:0; width:100%; }
-      #portfolio .card, #portfolio h2, #portfolio h3 { break-inside:avoid; page-break-inside:avoid; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Headings */
+    h2 { color: #1f497d; font-size: 1.6em; border-left: 4px solid #204060; padding-left: 0.5em; margin-bottom: 0.5em; }
+    h3 { color:rgb(90, 141, 165); font-size: 1.2em; margin: 1em 0 0.75em; }
   </style>
 </head>
 <body>
-  <button id="download-portfolio">下載整個連結內的內容</button>
   <header>
     <div class="tabs">
       <button class="tab-btn active" data-target="about">ABOUT ME</button>
@@ -47,7 +106,6 @@
       <button class="tab-btn" data-target="notes">讀書心得＆課程筆記</button>
     </div>
   </header>
-
   <main>
     <!-- ABOUT ME -->
     <section id="about" class="active">
